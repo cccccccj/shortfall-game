@@ -27,6 +27,12 @@ h1{
 h2{
     font-size: 2.0vw;
 }
+h3{
+    font-size: 1.1vw;
+}
+p{
+    font-size: 0.8vw;
+}
 .header{
     position: relative;
 }
@@ -48,36 +54,6 @@ h2{
     height: 7vh;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-}
-.middle{
-    justify-content: center;
-    margin: 0 auto;
-}
-.title{
-    text-align: center;
-    line-height: 3;
-}
-.CMV-chart{
-    margin: 0 auto;
-    color: white;
-    font-size: 1.3vw;
-    line-height: 1.6;
-    width: 55%;
-    border-spacing: 0 2.5vh;
-    text-align: center;
-}
-.CMV-chart th{
-    color: #8ABED8;
-}
-.CMV-chart td:first-child {
-    text-align: left;
-    padding-left: 2vw;
-    border-top-left-radius: 20px; 
-    border-bottom-left-radius: 20px;
-}
-.CMV-chart td:last-child {
-    border-bottom-right-radius: 20px; 
-    border-top-right-radius: 20px; 
 }
 .button{
     display: flex;
@@ -151,7 +127,7 @@ h2{
     color: gray;
     z-index: 1;
 }
-ul {
+.rules-ul{
     list-style: none;
     padding-top: 1vh;
     padding-left: 2vw;
@@ -175,3 +151,104 @@ ul {
     top: 0;
     padding: 3vw;
 }
+.middle{
+    justify-content: center;
+    margin: 0 auto;
+}
+.title{
+    text-align: center;
+    line-height: 3;
+    margin-top: -3vh;
+}
+
+
+/*CMV*/
+.CMV-chart{
+    margin: 0 auto;
+    color: white;
+    font-size: 1.3vw;
+    line-height: 1.6;
+    width: 55%;
+    border-spacing: 0 2.5vh;
+    text-align: center;
+}
+.CMV-chart th{
+    color: #8ABED8;
+}
+.CMV-chart td:first-child {
+    text-align: left;
+    padding-left: 2vw;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px;
+}
+.CMV-chart td:last-child {
+    border-bottom-right-radius: 20px; 
+    border-top-right-radius: 20px; 
+}
+
+
+/*TI*/
+.TI{
+    background-color: #8ABED8;
+    width: 90%;
+    height: 70vh;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: scroll;
+}
+.TI-ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 66%;
+    margin: 0 auto;
+}
+.tab-TI{
+    display: inline-block;
+    background-color: white;
+    width: 30%;
+    font-size: 1.3vw;
+    color: #8ABED8;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 1.8;
+    margin: 1vh;
+}
+.active-tab-TI{
+    color: white;
+}
+.level-TD{
+    padding: 1vw;
+    color: white;
+    background-color: transparent;
+    border-style: none;
+}
+.choice-TD{
+    padding: 1vw;
+    color: white;
+}
+.cell{   
+    border-radius: 20px;
+    height: 15vh;
+    padding: 0.4vw;
+}
+.TI-table{
+    width: 96%;
+    margin: 0 auto;
+    border-spacing: 0 1vh;
+    table-layout: fixed;
+}
+.row-TI{
+    background-color: #BBD9E9;
+    height: 14.5vh;
+}
+.row-TI td:first-child {
+    text-align: left;
+    padding-left: 2vw;
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px;
+}
+.row-TI td:last-child {
+    border-bottom-right-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+

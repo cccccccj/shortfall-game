@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+//import {CMVdata, rulesData} from './data.js';
 //import InfoLogo from './svg/info-circle.svg';
 //import RightLogo from './svg/caret-right.svg';
 
@@ -11,6 +12,26 @@ const CMVdata = [
   {category: 'Cars Sell Price', color: '#DC3522',current: '$2090', net: '$0'},
   {category: 'Max Buy Amount', color: '#8ABED8',current: '9', net: '0'},
   {category: 'Max Buy Amount', color: '#8ABED8',current: null, net: null}
+];
+const TIdata = [
+    {name:'Production', content:[
+        {level :{title:'Production Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Emission Control',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'BOF Dust Recycling',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'Energy Reduction',note:'Investment in heat recovery and recircilation equipment is used to capture to save energy.'}},
+        {level :{title:'Production Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null}},
+        {level :{title:'Production Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null}},
+        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null}}
+    ]},
+    {name:'Storage', content:[
+        {level :{title:'Storage Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Just In Time',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'AGV',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'KANBAN',note:'Investment in heat recovery and recircilation equipment is used to capture to save energy.'}},
+        {level :{title:'Storage Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null}},
+        {level :{title:'Storage Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null}},
+        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null}}
+    ]},
+    {name:'Waste', content:[
+        {level :{title:'Waste Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Scrp Segregation',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'AGV',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'Plastics Recycling',note:'Reuse of plastic containers and bins used in shipping leads to reduced packaging costs.'}},
+        {level :{title:'Waste Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null}},
+        {level :{title:'Waste Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null}},
+        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null}}
+    ]}
 ];
 const rulesData = [
     {id:'0',title:'Premise',content:'Your team has purchased three factories in a supply chain: a Materials producer, a Parts producer, and a Cars producer. The factories still have some supplies in storage from past production, but as the new managers of each of these companies, your team will have to work together to produce the most efficient supply chain and provide all is members with sufficient resources each round.'},
@@ -23,7 +44,7 @@ const rulesData = [
     {id:'7',title:'Current Event',content:'At the end of each round, an event occurs that will affect game play for the next round. These events can affect one or all tiers of your team. All teams playing the same game number will see the same current events.'},
     {id:'8',title:'Current Score',content:"Before a new round begins, your team's combined scores are displayed. These are the components of the final scores that determine the game's winner after ten rounds."},
     {id:'9',title:'Game End',content:'Winning: There are four final scores: Total Profits, Green Score, Profit Per Car, and Waste Disposal Cost Efficiency. The team that achieves the greatest number of best scores wins. For example, in a four-team game, if one team scores highest in two areas and two other teams score highest in only one area each, then the team scoring highest in two areas wins.'}
-]
+];
 const defaultColor = '#8ABED8';
 const players = [{
         'playerName':'Materials',
@@ -36,13 +57,13 @@ const players = [{
         'color':'#DC3522'
     }];
 
-const titles = ['Current Market Value','Tech...'];
+const titles = ['Current Market Value','Technological Innovation'];
 const playersStyle = {
     backgroundColor : players[0].color
 }
 
 let roundTurn = 1;
-let page = 3;
+let page = 5;
 
 class Players extends React.Component {
     render(){
@@ -65,54 +86,7 @@ class Rounds extends React.Component{
 class Title extends React.Component{
     render(){
         return(
-            <h1 className = 'title'>{titles[0]}</h1>
-        )
-    }
-}
-
-class MarketValueRow extends React.Component {
-  render() {
-    const row = this.props.row;
-//    let current = row => {
-//      if(row.current = null){
-//          return '?'
-//      }else{
-//          return row.current
-//      }
-//    }
-//    console.log(current());
-    return (
-      <tr style = {{backgroundColor:row.color}}>
-        <td>{row.category}</td>
-        <td>{row.current}</td>
-        <td>{row.net}</td>
-      </tr>
-    );
-  }
-}
-class Chart extends React.Component{
-    render(){
-        const rows = [];
-        this.props.marketValue.forEach((row) => {
-            rows.push(
-            <MarketValueRow
-            row={row}
-            key={row.category} />
-            );
-        });
-        return(
-            <table className = 'CMV-chart'>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>'This Round'</th>
-                        <th>'Net Change'</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {rows}
-                </tbody>
-            </table>
+            <h1 className = 'title'>{titles[1]}</h1>
         )
     }
 }
@@ -123,7 +97,6 @@ function Next() {
         </button>
   );
 }
-
 class RuleContent extends React.Component{
     constructor(props) {
         super(props);
@@ -153,7 +126,7 @@ class RuleContent extends React.Component{
         return(
             <div>
                 <div className='rules-menu'>
-                    <ul>
+                    <ul className='rules-ul'>
                         {lists}
                     </ul>
                 </div>
@@ -165,7 +138,6 @@ class RuleContent extends React.Component{
         )
     }
 }
-
 class Rule extends React.Component {
   render() {
     return (
@@ -211,6 +183,108 @@ class ShowRule extends React.Component {
     }
 }
 
+class TIRow extends React.Component {
+    colorButton(title){
+        return title === null ? null : playersStyle
+    };
+    render() {
+        const row = this.props.row;
+        return (
+            <tr className='row-TI'>
+                <td className='level-TD'>
+                    <div className='cell'>
+                        <h3>{row.level.title}</h3>
+                        <p>{row.level.note}</p>   
+                    </div>
+                </td>
+                <td className='choice-TD'>
+                    <div className='cell' style = {playersStyle}>
+                        <h3>{row.chose1.title}</h3>
+                        <p>{row.chose1.note}</p>
+                    </div>
+                </td>
+                <td className='choice-TD'>
+                    <div className='cell' style = {this.colorButton(row.chose2.title)}>
+                        <h3>{row.chose2.title}</h3>
+                        <p>{row.chose2.note}</p>
+                    </div>
+                </td>
+                <td className='choice-TD'>
+                    <div className='cell' style = {this.colorButton(row.chose3.title)}>
+                        <h3>{row.chose3.title}</h3>
+                        <p>{row.chose3.note}</p>
+                    </div>
+                </td>
+            </tr>
+        );
+    }
+}
+
+class TITable extends React.Component{
+    render(){
+        const rows = [];
+        this.props.TIValue.forEach((row,index) => {
+            rows.push(
+            <TIRow
+            row={row}
+            key={index} />
+            );
+        });
+        return(
+            <table className = 'TI-table'>
+                <tbody className='tbody-TI'>
+                    {rows}
+                </tbody>
+            </table>
+        )
+    } 
+} 
+
+class TI extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            show : 0
+        };
+    }
+    colorPanel(index){
+        return index === this.state.show ? playersStyle : null
+    };
+    stylePanel(index){
+        return index === this.state.show ? "active-tab-TI tab-TI" :"tab-TI"
+    };
+    renderContent(){
+        return TIdata[this.state.show].content;
+    };
+    render(){
+        const panels = [];
+        TIdata.forEach((panel,index) =>{
+            panels.push(<li
+                            onClick={()=>{this.setState({show:index})}}
+                            className = {this.stylePanel(index)} 
+                            style = {this.colorPanel(index)}
+                       >
+                        {panel.name}
+                       </li>
+                      )
+        });
+console.log(TIdata[this.state.show].content)
+        return(
+            <div className='TI'>
+                <div className='TI-tabs'>
+                    <ul className='TI-ul'>
+                        {panels}
+                    </ul>
+                </div>
+                <div className='TI-table'>
+                    <TITable TIValue = {TIdata[this.state.show].content}/>
+                </div>
+            </div>
+        )
+    }
+}
+
+
 class Game extends React.Component {
     render(){
         return(
@@ -222,10 +296,9 @@ class Game extends React.Component {
             
                 <div className='middle'>
                     <Title/>
-                    <Chart marketValue={CMVdata}/>
+                    <TI/>
                 </div>
                 <div className='buttons'>
-                    <Next/>
                     <ShowRule/>
                 </div>
             </div>
@@ -234,154 +307,3 @@ class Game extends React.Component {
 }
 
 ReactDOM.render(<Game />, document.getElementById("root"));
-
-
-
-
-
-//function Square(props) {
-//  return (
-//    <button className="square" onClick={props.onClick}>
-//      {props.value}
-//    </button>
-//  );
-//}
-
-//class Board extends React.Component {
-//  renderSquare(i) {
-//    return (
-//      <Square
-//        value={this.props.squares[i]}
-//        onClick={() => this.props.onClick(i)}
-//      />
-//    );
-//  }
-//
-//  render() {
-//    return (
-//      <div>
-//        <div className="board-row">
-//          {this.renderSquare(0)}
-//          {this.renderSquare(1)}
-//          {this.renderSquare(2)}
-//        </div>
-//        <div className="board-row">
-//          {this.renderSquare(3)}
-//          {this.renderSquare(4)}
-//          {this.renderSquare(5)}
-//        </div>
-//        <div className="board-row">
-//          {this.renderSquare(6)}
-//          {this.renderSquare(7)}
-//          {this.renderSquare(8)}
-//        </div>
-//      </div>
-//    );
-//  }
-//}
-
-//class Game extends React.Component {
-//  constructor(props) {
-//    super(props);
-//    this.state = {
-//      history: [
-//        {
-//          squares: Array(9).fill(null)
-//        }
-//      ],
-//      stepNumber: 0,
-//      xIsNext: true
-//    };
-//  }
-//
-//  handleClick(i) {
-//    const history = this.state.history.slice(0, this.state.stepNumber + 1);
-//    const current = history[history.length - 1];
-//    const squares = current.squares.slice();
-//    if (calculateWinner(squares) || squares[i]) {
-//      return;
-//    }
-//      console.log(history);
-//      console.log(squares);
-//    squares[i] = this.state.xIsNext ? "X" : "O";
-//    this.setState({
-//      history: history.concat([
-//        {
-//          squares: squares
-//        }
-//      ]),
-//      stepNumber: history.length,
-//      xIsNext: !this.state.xIsNext
-//    });
-//  }
-//
-//  jumpTo(step) {
-//    this.setState({
-//      stepNumber: step,
-//      xIsNext: (step % 2) === 0
-//    });
-//  }
-//
-//  render() {
-//    const history = this.state.history;
-//    const current = history[this.state.stepNumber];
-//    const winner = calculateWinner(current.squares);
-//
-//    const moves = history.map((step, move) => {
-//      const desc = move ?
-//        'Go to move #' + move :
-//        'Go to game start';
-//      return (
-//        <li key={move}>
-//          <button onClick={() => this.jumpTo(move)}>{desc}</button>
-//        </li>
-//      );
-//    });
-//
-//    let status;
-//    if (winner) {
-//      status = "Winner: " + winner;
-//    } else {
-//      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-//    }
-//
-//    return (
-//      <div className="game">
-//        <div className="game-board">
-//          <Board
-//            squares={current.squares}
-//            onClick={i => this.handleClick(i)}
-//          />
-//        </div>
-//        <div className="game-info">
-//          <div>{status}</div>
-//          <ol>{moves}</ol>
-//        </div>
-//      </div>
-//    );
-//  }
-//}
-
-// ========================================
-
-//ReactDOM.render(<Game />, document.getElementById("root"));
-
-//function calculateWinner(squares) {
-//  const lines = [
-//    [0, 1, 2],
-//    [3, 4, 5],
-//    [6, 7, 8],
-//    [0, 3, 6],
-//    [1, 4, 7],
-//    [2, 5, 8],
-//    [0, 4, 8],
-//    [2, 4, 6]
-//  ];
-//  for (let i = 0; i < lines.length; i++) {
-//    const [a, b, c] = lines[i];
-//    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-//      return squares[a];
-//    }
-//  }
-//  return null;
-//}

@@ -1,0 +1,21 @@
+
+const CMVdata = [
+  {category: 'Raw Materials Price', color: '#8ABED8', current: '$590', net: '$0'},
+  {category: 'Materials Sell Price', color: '#2A8039',current: '$1090', net: '$0'},
+  {category: 'Parts Sell Price', color: '#FF8522',current: '$1590', net: '$0'},
+  {category: 'Cars Sell Price', color: '#DC3522',current: '$2090', net: '$0'},
+  {category: 'Max Buy Amount', color: '#8ABED8',current: '9', net: '0'},
+  {category: 'Max Buy Amount', color: '#8ABED8',current: null, net: null}
+];
+const rulesData = [
+    {id:'0',title:'Premise',content:'Your team has purchased three factories in a supply chain: a Materials producer, a Parts producer, and a Cars producer. The factories still have some supplies in storage from past production, but as the new managers of each of these companies, your team will have to work together to produce the most efficient supply chain and provide all is members with sufficient resources each round.'},
+    {id:'1',title:'Setup',content:'Divide players into teams consisting of 3 or more people per team.  There must be at least two teams.In teams of 3, each player will manage a tier of the supply chain.  In teams of more than 3, players will share management of their tier. They may divide up the decision-making as they see fit, but close collaboration is encouraged.Assign each player to one of the 3 tiers of the supply chain: Materials (2nd Tier), Parts (1st Tier), or Cars (OEM). Each team must have at least one player assigned to each tier of the supply chain.'},
+    {id:'2',title:'Objective and Scoring',content:'Objective:Work with your team to achieve the highest score by managing the most profitable and environmentally benign supply chain.'},
+    {id:'3',title:'Game Play Overview',content:"A full game consists of 10 rounds for every team. Within a round, each player on your team (Materials, Parts, and Cars) takes one turn. Each team operates on a single computer. When a player is finished with his or her turn, he or she gives control to the next team-member. After ten rounds, report your team's scores to the facilitator, who will determine the overall winner among teams."},
+    {id:'4',title:'Current Market Values',content:'The first phase of each round is a display of the current market values. This table will show you:...'},
+    {id:'5',title:'Technological Innovations',content:'This step allows you to implement a new technology in your factory each turn. Use the buttons at the top to view the three technology trees, which offer improvements in the areas of production, storage and waste. As you accumulate innovations you will unlock more options further down each of the three trees.'},
+    {id:'6',title:'Production and Sales',content:"Four major decisions are made on this screen. The current tier increases or decreases the number of units to purchase, produce, and sell, and decides how much waste to remove versus store. All information is updated on the screen as changes in projections are made, but nothing is finalized until the 'next' button is pressed.If a unit's data turns red, this indicates a finance or capacity problem that must be resolved before play can continue."},
+    {id:'7',title:'Current Event',content:'At the end of each round, an event occurs that will affect game play for the next round. These events can affect one or all tiers of your team. All teams playing the same game number will see the same current events.'},
+    {id:'8',title:'Current Score',content:"Before a new round begins, your team's combined scores are displayed. These are the components of the final scores that determine the game's winner after ten rounds."},
+    {id:'9',title:'Game End',content:'Winning: There are four final scores: Total Profits, Green Score, Profit Per Car, and Waste Disposal Cost Efficiency. The team that achieves the greatest number of best scores wins. For example, in a four-team game, if one team scores highest in two areas and two other teams score highest in only one area each, then the team scoring highest in two areas wins.'}
+];
