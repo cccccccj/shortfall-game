@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './index.css';
 //import {CMVdata, rulesData} from './data.js';
 //import InfoLogo from './svg/info-circle.svg';
@@ -15,22 +16,22 @@ const CMVdata = [
 ];
 const TIdata = [
     {name:'Production', content:[
-        {level :{title:'Production Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Emission Control',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'BOF Dust Recycling',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'Energy Reduction',note:'Investment in heat recovery and recircilation equipment is used to capture to save energy.'}},
-        {level :{title:'Production Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null}},
-        {level :{title:'Production Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null}},
-        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null}}
+        {level :{title:'Production Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Emission Control',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'BOF Dust Recycling',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'Energy Reduction',note:'Investment in heat recovery and recircilation equipment is used to capture to save energy.'}, lock : false},
+        {level :{title:'Production Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null},lock : true},
+        {level :{title:'Production Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null}, lock : true},
+        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null},lock : true}
     ]},
     {name:'Storage', content:[
-        {level :{title:'Storage Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Just In Time',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'AGV',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'KANBAN',note:'Investment in heat recovery and recircilation equipment is used to capture to save energy.'}},
-        {level :{title:'Storage Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null}},
-        {level :{title:'Storage Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null}},
-        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null}}
+        {level :{title:'Storage Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Just In Time',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'AGV',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'KANBAN',note:'Investment in heat recovery and recircilation equipment is used to capture to save energy.'},lock : false},
+        {level :{title:'Storage Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null},lock : true},
+        {level :{title:'Storage Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null},lock : true},
+        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null},lock : true}
     ]},
     {name:'Waste', content:[
-        {level :{title:'Waste Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Scrp Segregation',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'AGV',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'Plastics Recycling',note:'Reuse of plastic containers and bins used in shipping leads to reduced packaging costs.'}},
-        {level :{title:'Waste Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null}},
-        {level :{title:'Waste Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null}},
-        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null}}
+        {level :{title:'Waste Level 1',note:'Complete 2 of these innovations to unlock Level 2'}, chose1:{title:'Scrp Segregation',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'AGV',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA. Zinc can be reused and avoids.'},chose3:{title:'Plastics Recycling',note:'Reuse of plastic containers and bins used in shipping leads to reduced packaging costs.'},lock : false},
+        {level :{title:'Waste Level 2',note:'Complete 1 of these innovations to unlock Level 3'}, chose1:{title:'PFC Emissions',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet Clean Air Act requiements.'},chose2:{title:'Lightweighting',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA.'},chose3:{title:null,note:null},lock : true},
+        {level :{title:'Waste Level 3',note:'Complete 1 of these innovations plus 1 in each other category to unlock Mastery'}, chose1:{title:'EStrip Casting',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:'Glass Replacement',note:'Recovery of toxic metal dusts from steelmaking processes avoids placement of high zinc content dust in landfills and reduces needs for compliance with RCRA...'},chose3:{title:null,note:null},lock : true},
+        {level :{title:'Mastery requires:',note:'Storage Level1 Waste Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null},lock : true}
     ]}
 ];
 const rulesData = [
@@ -90,6 +91,7 @@ class Title extends React.Component{
         )
     }
 }
+
 function Next() {
     return (
         <button className="button"> 
@@ -187,10 +189,16 @@ class TIRow extends React.Component {
     colorButton(title){
         return title === null ? null : playersStyle
     };
+    styleButton(title){
+        return title === null ? null : "cell-button cell"
+    };
+    lockLayer(lock){
+        return lock === false ? 'unlock-row row-TI' :'lock-row row-TI'
+    };
     render() {
         const row = this.props.row;
         return (
-            <tr className='row-TI'>
+            <tr className={this.lockLayer(row.lock)}>
                 <td className='level-TD'>
                     <div className='cell'>
                         <h3>{row.level.title}</h3>
@@ -198,19 +206,19 @@ class TIRow extends React.Component {
                     </div>
                 </td>
                 <td className='choice-TD'>
-                    <div className='cell' style = {playersStyle}>
+                    <div className={this.styleButton(row.chose1.title)} style = {playersStyle}>
                         <h3>{row.chose1.title}</h3>
                         <p>{row.chose1.note}</p>
                     </div>
                 </td>
                 <td className='choice-TD'>
-                    <div className='cell' style = {this.colorButton(row.chose2.title)}>
+                    <div className={this.styleButton(row.chose2.title)} style = {this.colorButton(row.chose2.title)}>
                         <h3>{row.chose2.title}</h3>
                         <p>{row.chose2.note}</p>
                     </div>
                 </td>
                 <td className='choice-TD'>
-                    <div className='cell' style = {this.colorButton(row.chose3.title)}>
+                    <div className={this.styleButton(row.chose3.title)} style = {this.colorButton(row.chose3.title)}>
                         <h3>{row.chose3.title}</h3>
                         <p>{row.chose3.note}</p>
                     </div>
@@ -219,7 +227,6 @@ class TIRow extends React.Component {
         );
     }
 }
-
 class TITable extends React.Component{
     render(){
         const rows = [];
@@ -239,7 +246,6 @@ class TITable extends React.Component{
         )
     } 
 } 
-
 class TI extends React.Component{
     constructor(props) {
         super(props);
@@ -284,24 +290,73 @@ console.log(TIdata[this.state.show].content)
     }
 }
 
+class MarketValueRow extends React.Component {
+  render() {
+    const row = this.props.row;
+    return (
+      <tr style = {{backgroundColor:row.color}}>
+        <td>{row.category}</td>
+        <td>{row.current}</td>
+        <td>{row.net}</td>
+      </tr>
+    );
+  }
+}
+class Chart extends React.Component{
+    render(){
+        const rows = [];
+        this.props.marketValue.forEach((row) => {
+            rows.push(
+            <MarketValueRow
+            row={row}
+            key={row.category} />
+            );
+        });
+        return(
+            <table className = 'CMV-chart'>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>'This Round'</th>
+                        <th>'Net Change'</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {rows}
+                </tbody>
+            </table>
+        )
+    }
+}
 
 class Game extends React.Component {
     render(){
         return(
-            <div>
-                <div className='header'>
-                    <Players/>
-                    <Rounds/>
-                </div>
+            <BrowserRouter>
+                <div>
+                    <div className='header'>
+                        <Players/>
+                        <Rounds/>
+                    </div>
             
-                <div className='middle'>
-                    <Title/>
-                    <TI/>
+                    <div className='middle'>
+                        <Route exact={true} path='/ti' component={Title}/>
+                        <Route exact={true} path='/ti' component={TI}/>   
+                        <Route exact={true} path = '/' render={()=>(
+                            <h1 className = 'title'>{titles[0]}</h1>
+                        )}/>
+                        <Route exact={true} path = '/' render={()=>(
+                            <Chart marketValue={CMVdata}/>
+                        )}/>
+                    </div>
+                    <div className='buttons'>
+                        <Link to={`/ti`}>
+                            <Next/>
+                        </Link>
+                        <ShowRule/>
+                    </div>
                 </div>
-                <div className='buttons'>
-                    <ShowRule/>
-                </div>
-            </div>
+            </BrowserRouter>
         )
     }
 }
