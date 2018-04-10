@@ -26,6 +26,7 @@ const titles = ['Set up','Premise','Objective and Scoring','Current Market Value
 
 let roundTurn = 1;
 let page = 3;
+let countPlayer = 1;
 let currentPageRule;
 let playersStyle = {
     backgroundColor : players[roundTurn].color
@@ -34,7 +35,7 @@ class Players extends React.Component {
     render(){
         return(
             <div className = 'players' style = {playersStyle}>
-                <h2 style = {{textAlign: 'center'}}>{players[roundTurn].playerName}</h2>
+                <h2 style = {{textAlign: 'center'}}>{players[countPlayer].playerName}</h2>
             </div>
         );
     }
@@ -48,7 +49,7 @@ class Rounds extends React.Component{
         )
     }
 }
-let countPlayer = 1;
+
 
 function Next() { 
     page++;
@@ -65,7 +66,7 @@ function Next() {
         roundTurn++;
     }
     playersStyle = {
-        backgroundColor : players[roundTurn].color
+        backgroundColor : players[countPlayer].color
     }
 
     return (
@@ -319,7 +320,7 @@ class Game extends React.Component {
             <BrowserRouter>
                 <div>
                     <div className='header'>
-                        <Players/>
+                        <Route exact={true} path="/(3|4|5)/" component={Players}/>
                         <Rounds/>
                     </div>
             
