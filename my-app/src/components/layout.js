@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from './header.js';
-import Title from './title.js'
+import Title from './title.js';
 import Buttons from './button.js';
-import {CMVdata,TIdata} from '../data/data.js'
-import CMVChart from './cmv.js'
-import TI from './ti.js'
+import {PSdata, CMVdata,TIdata} from '../data/data.js';
+import CMVChart from './cmv.js';
+import TI from './ti.js';
+import PS from './ps.js';
+import Setup from './setup.js';
 
 const players = [{
       'playerName':'',
@@ -70,14 +72,16 @@ export default class Layout extends React.Component {
                             page = {this.state.page}
             />
             <div className='middle' onload={this.showPage()}>
-              <Title title= {titles[this.state.page]}/>
+              {!show[0] ? <Title title= {titles[this.state.page]}/> :null}
+              {show[5] && <PS data = {PSdata}/>}
               {show[4] && <TI TIdata = {TIdata} playerStyle = {this.playerStyle()}/>}
               {show[3] && <CMVChart marketValue= {CMVdata}/>}
+              {show[0] && <Setup/>}
             </div>
-            <Buttons
+            {!show[0] ? <Buttons
               changePage = {this.changePage.bind(this)}
               page = {this.state.page}
-            />
+            /> : null}
           </div>
         );
     }

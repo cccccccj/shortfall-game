@@ -1,25 +1,25 @@
 const PSdata = [
-  {category:'store',item: 'Raw Materials to Buy',unit:'$590/unit',
+  [{category:'store',item: 'Raw Materials to Buy',unit:'$590/unit',
     detail:[{name:'Raw Materials Purchase Cost',unit:null},{name:'Raw Storage Cost',unit:null}]
   },
   {category:'store',item:'Raw Materials to Store',unit:'$50/unit',
     detail:[{name:'Proj.RS Green Score',unit:'0/unit'}]
-  },
-  {category:'produce',item:'Materials to Produce',unit:'$100/unit',
+  }],
+  [{category:'produce',item:'Materials to Produce',unit:'$100/unit',
     detail:[{name:'Material Production Cost',unit:null},{name:'Proj.Waste Produced',unit:'3/unit'}]
   },
   {category:'produce',item:'Production Storage',unit:'$50/unit',
     detail:[{name:'Unit Storage Cost',unit:null},{name:'Proj.US Green Score',unit:'0/unit'}]
-  },
-  {category:'sell',item:'Materials to Sell',unit:'$1090/unit',
+  }],
+  [{category:'sell',item:'Materials to Sell',unit:'$1090/unit',
     detail:[{name:'Materials Sale Projected Income',unit:null}]
-  },
-  {category:'waste',item:'Waste to Remove',unit:'$100/unit',
+  }],
+  [{category:'waste',item:'Waste to Remove',unit:'$100/unit',
     detail:[{name:'Waste Removal Cost',unit:null},{name:'Proj.WR Green Score',unit:'2/unit'}]
   },
   {category:'waste',item:'Waste Storage',unit:'$50/unit',
     detail:[{name:'Waste Storage Cost',unit:null},{name:'Proj.WS Green Score',unit:'-1/unit'}]
-  }
+  }]
 ];
 const CMVdata = [
   {category: 'Raw Materials Price', color: '#8ABED8', current: '$590', net: '$0'},
@@ -61,4 +61,4 @@ const TIdata = [
         {level :{title:'Mastery requires:',note:'Production Level1 Storage Level1'}, chose1:{title:'Electrolytic Cell Technology',note:'Coking operations for stell production require major investments and upgrades for emmision control to meet..'},chose2:{title:null,note:null},chose3:{title:null,note:null},lock : true}
     ]}
 ];
-export {CMVdata,rulesData,TIdata};
+export {PSdata,CMVdata,rulesData,TIdata};

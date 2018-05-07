@@ -1,14 +1,20 @@
 import React from 'react';
+import PSRow from './PS/ps_row.js';
 
 export default class PS extends React.Component{
   render(){
+    const PSrows = [];
+    this.props.data.forEach((row,index) => {
+        PSrows.push(
+        <PSRow
+        row={row}
+        playerStyle={this.props.playerStyle}
+        key={index} />
+        );
+    });
     return(
       <div className='PS'>
-          <div className='PS-table'>
-              <PSTable
-              data = {this.props.data}
-              playerStyle = {this.props.playerStyle}/>
-          </div>
+        {PSrows}
       </div>
     )
   }

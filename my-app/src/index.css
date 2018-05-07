@@ -173,6 +173,49 @@ p{
     margin-top: -3vh;
 }
 
+/*Setup*/
+.setup-header{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: -3vh;
+}
+.setup-logo{
+    font-size: 4.6vw;
+    font-weight: 600;
+    color: #FF5E3A;
+    padding-right: 2vw;
+    border-right: 5px solid white;
+}
+.setup-subtitle{
+  font-style: italic;
+  color: white;
+  font-size: 2vw;
+  width: 45vw;
+  padding-left: 2vw;
+}
+.setup-title{
+  background-color: rgba(78, 56, 158, 0.5);
+  color: white;
+  font-size: 2.4vw;
+  margin-top: 2vw;
+  text-align: center;
+  padding: 0.8vw;
+}
+.setup-middle{
+  background: -webkit-linear-gradient(left, rgba(78,56,158,0.8),rgba(136,206,215,0.8));
+  background: -o-linear-gradient(right, rgba(78,56,158,0.8),rgba(136,206,215,0.8));
+  background: -moz-linear-gradient(right, rgba(78,56,158,0.8),rgba(136,206,215,0.8));
+  background: linear-gradient(to right,rgba(78,56,158,0.8),rgba(136,206,215,0.8));
+  width: 40vw;
+  height: 50vh;
+  margin: 7vh auto;
+  border-radius: 25px;
+  color: white;
+  font-size: 1.5vw;
+}
+
 
 /*CMV*/
 .CMV-chart{
@@ -274,4 +317,19 @@ p{
 }
 .lock-row{
     filter: brightness(0.8);
+}
+
+/*PS*/
+.PS{
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  background: #8ABED8;
+  border-color: black;
+  color: white;
+}
+
+.PS-table td:first-child {
+    text-align: left;
+    padding-left: 2vw;
 }
