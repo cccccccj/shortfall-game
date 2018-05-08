@@ -209,13 +209,43 @@ p{
   background: -moz-linear-gradient(right, rgba(78,56,158,0.8),rgba(136,206,215,0.8));
   background: linear-gradient(to right,rgba(78,56,158,0.8),rgba(136,206,215,0.8));
   width: 40vw;
-  height: 50vh;
+  height: 28vw;
   margin: 7vh auto;
   border-radius: 25px;
   color: white;
   font-size: 1.5vw;
 }
-
+.setup-text{
+  padding: 1.1vw 3.5vw;
+}
+.setup-input{
+  background-color: rgba(255,255,255,0.4);
+  height: 22%;
+  display: flex;
+  padding: 1.1vw 3.5vw;
+}
+.setup-input-area{
+  background-color: #84CED7;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 3px;
+  font-size: 2vw;
+  color: white;
+}
+#setup-input-number{
+  width: 30%;
+}
+#setup-input-name{
+  width: 100%;
+  font-size: 1.5vw;
+}
+#setup-start{
+  display: flex;
+  font-size: 2.4vw;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
 
 /*CMV*/
 .CMV-chart{

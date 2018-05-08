@@ -76,7 +76,7 @@ export default class Layout extends React.Component {
               {show[5] && <PS data = {PSdata}/>}
               {show[4] && <TI TIdata = {TIdata} playerStyle = {this.playerStyle()}/>}
               {show[3] && <CMVChart marketValue= {CMVdata}/>}
-              {show[0] && <Setup/>}
+              {show[0] && <Setup changePage = {this.changePage.bind(this)}/>}
             </div>
             {!show[0] ? <Buttons
               changePage = {this.changePage.bind(this)}
