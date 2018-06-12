@@ -9,7 +9,7 @@ export default class PS extends React.Component{
         <PSRow
         row={row}
         playerStyle={this.props.playerStyle}
-        key={index} />
+        index={index} />
         );
     });
     return(

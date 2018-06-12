@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './header.js';
 import Title from './title.js';
-import Buttons from './button.js';
+import Info from './Button/info.js';
+import Next from './next.js';
 import {PSdata, CMVdata,TIdata} from '../data/data.js';
 import CMVChart from './cmv.js';
 import TI from './ti.js';
@@ -72,13 +73,14 @@ export default class Layout extends React.Component {
                             page = {this.state.page}
             />
             <div className='middle' onload={this.showPage()}>
-              {!show[0] ? <Title title= {titles[this.state.page]}/> :null}
-              {show[5] && <PS data = {PSdata}/>}
+              {!(show[0]||show[1]||show[2]) ? <Title title= {titles[this.state.page]}/> :null}
+              {show[5] && <PS data = {PSdata} playerStyle = {this.playerStyle()}/>}
               {show[4] && <TI TIdata = {TIdata} playerStyle = {this.playerStyle()}/>}
               {show[3] && <CMVChart marketValue= {CMVdata}/>}
-              {show[0] && <Setup changePage = {this.changePage.bind(this)}/>}
+              {(show[0]||show[1]||show[2]) && <Setup page = {this.state.page} changePage = {this.changePage.bind(this)}/>}
             </div>
-            {!show[0] ? <Buttons
+            <Info page = {this.state.page}/>
+            {!show[0] ? <Next
               changePage = {this.changePage.bind(this)}
               page = {this.state.page}
             /> : null}

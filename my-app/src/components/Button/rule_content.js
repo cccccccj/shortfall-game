@@ -12,7 +12,9 @@ export default class RuleContent extends React.Component{
       return index === this.state.show ? "active-tab tab" :"tab"
   };
   renderContent(){
-      return rulesData[this.state.show].content;
+      var items = rulesData[this.state.show].content;
+      var changed = items.replace(/\n/g, <br />);
+      return changed;
   };
   render(){
       const lists = [];
